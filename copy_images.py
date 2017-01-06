@@ -4,6 +4,8 @@ from optparse import OptionParser
 
 """ Copies images from source to destination.
 
+    Usage: python copy_images.py SOURCE TARGET [OPTIONS]
+
     Options:
         `largest-per-folder`: copies largest image for each folder and sub-folder.
         `smallest-per-folder`: copies smallest image for each folder and sub-folder.
@@ -32,6 +34,8 @@ def commandline_options():
                       "--smallest-per-folder",
                       action="store_true",
                       help="Copies smallest image for each folder and sub-folder.")
+
+    # TODO: Add/override default help option.
 
     # Parse options:
     (options, args) = parser.parse_args()

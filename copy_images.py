@@ -11,7 +11,7 @@ from optparse import OptionParser
         `smallest-per-folder`: copies smallest image for each folder and sub-folder.
 """
 
-ALLOWED_FILES = frozenset({"jpg", "jpeg", "gif", "ico", "png"})
+ALLOWED_FILES = frozenset({"jpg", "jpeg", "gif", "ico", "png", "mp4"})
 
 
 def commandline_options():
@@ -91,6 +91,7 @@ def main(source, target, command_options):
 
     # -----------------------------------------------
     # Copy files to target:
+    # TODO: be able to handle errors -- e.g. copy files if they already exist.
     try:
         [shutil.copy2(file_, target) for file_ in files_to_copy]
     except Exception as e:
